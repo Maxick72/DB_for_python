@@ -1,8 +1,10 @@
+
+
 CREATE TABLE musicstyle (
  styleID serial PRIMARY KEY,
  name VARCHAR(25) NOT NULL
  );
-
+ 
 CREATE TABLE album (
  albumID SERIAL PRIMARY KEY,
  name VARCHAR(100) NOT NULL,
@@ -23,26 +25,27 @@ CREATE TABLE track (
 
 CREATE TABLE artist_style (
  artist_styleID SERIAL PRIMARY KEY NOT null,
- style_ID INT NOT NULL,
- artist_ID INT NOT NULL,
- CONSTRAINT fk_style FOREIGN KEY (style_ID) REFERENCES musicstyle (styleID) ON DELETE CASCADE,
- CONSTRAINT fk_artist FOREIGN KEY (artist_ID) REFERENCES artist (artistID) ON DELETE CASCADE
+ styleID INT NOT NULL,
+ artistID INT NOT NULL,
+ CONSTRAINT fk_style FOREIGN KEY styleID REFERENCES musicstyle (styleID) ON DELETE CASCADE,
+ CONSTRAINT fk_artist FOREIGN KEY artistID REFERENCES artist (artistiID) ON DELETE CASCADE
  );
 
 CREATE TABLE album_artist (
  album_artistID SERIAL PRIMARY KEY,
- album_ID INT NOT NULL,
- artist_ID INT NOT NULL,
- CONSTRAINT fk_album FOREIGN KEY (album_ID) REFERENCES album(albumID) ON DELETE CASCADE,
- CONSTRAINT fk_artist FOREIGN KEY (artist_ID) REFERENCES artist (artistID) ON DELETE CASCADE
+ albumID INT NOT NULL,
+ artistID INT NOT NULL,
+ CONSTRAINT fk_album FOREIGN KEY albumID REFERENCES album(albumID) NO DELETE CASCADE,
+ CONSTRAINT fk_artist FOREIGN KEY artistID REFERENCES artist(artistID) NO DELETE CASCADE
  ); 
 
 CREATE TABLE collection (
  collectionID SERIAL PRIMARY KEY NOT NULL,
  name VARCHAR(100) NOT NULL,
  collection_date DATE NOT NULL,
- album_ID INT NOT NULL,
- track_ID INT NOT NULL,
- CONSTRAINT fk_album FOREIGN KEY (album_ID) REFERENCES album(albumID) ON DELETE CASCADE,
- CONSTRAINT fk_track FOREIGN KEY (track_ID) REFERENCES track(trackID) ON DELETE CASCADE
- ); 
+ albumID INT NOT NULL,
+ trackID INT NOT NULL.
+ CONSTRAINT fk_album FOREIGN KEY albumID REFERENCES album(albumID) ON DELETE CASCADE,
+ CONSTRAINT fk_track FOREIGN KEY track(trackID) ON DELETE CASCADE
+ );
+
