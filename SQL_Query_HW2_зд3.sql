@@ -1,27 +1,16 @@
-SELECT name, duration
-FROM track
-WHERE MAX(duration);
+SELECT m.Name
+      COUNT (a.ArtistID) AS ArtistCount
+FROM MusicStyle m
+   LEFT JOIN 
+            artist_style astl ON m.StyleID = astl.Style_id;
+   LEFT JOIN
+            Artust a ON astl.Artist_id = a.ArtistID
+GROUP BY 
+         m.Name
+ORDER BY 
+         ArtistCaunt DESC ;
 
-SELECT name, duration
-FROM track
-WHERE duration < 210;
-
-SELECT name, collection_date
-FROM collection
-WHERE collection_date BETWEEN 2018-01-01 AND 2020-12-31;
-
-SELECT name
-FROM artist
-WHERE name NOT LIKE '% %';
-
-SELECT name
-FROM track
-WHERE name LIKE '%мой%'
-   OR name LIKE '%my%';
-
-SELECT COUNT (*)
-FROM artist_style;
-
+         
 SELECT COUNT (*)
 FROM track_collection;
 
