@@ -58,17 +58,3 @@ GROUP BY
 		c.name;
 		
 
-		
-		
-	
-	
-		
-		
-
-SELECT COUNT (AlbumID)
-FROM track;
-
-SELECT AVG (duration)
-FROM album;
-
-
