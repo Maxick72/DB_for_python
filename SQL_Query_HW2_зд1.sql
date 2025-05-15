@@ -16,8 +16,8 @@ INSERT INTO artist(name) VALUES
 	('Nikolay Petrov'),
 	('Zach Bryan');
 	
-INSERT INTO track(name,duration,album_id) VALUES
-	('Slave Me',147,1),
+INSERT INTO track(name,duration,albumID) VALUES
+	('Slave My',147,1),
 	('No Limit',193,1),
 	('Он Тебя Целует',240,2),
 	('Стоят подружки',246,2),
@@ -39,7 +39,7 @@ INSERT INTO artist_style(style_id,artist_id) VALUES
 	(4,4),
 	(1,4);
 
-INSERT INTO album_artist(album_id,style_id) VALUES		
+INSERT INTO album_artist(album_id,artist_id) VALUES		
 	(1,1),
 	(2,2),
 	(3,3),
@@ -49,7 +49,7 @@ INSERT INTO track_collection(collection_id,track_id) VALUES
 	(1,1),
 	(1,2),
 	(1,3),
-	(2,4)
+	(2,4),
 	(2,1),
 	(2,2),
 	(3,3),
