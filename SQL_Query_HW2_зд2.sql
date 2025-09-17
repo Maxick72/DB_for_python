@@ -17,8 +17,10 @@ WHERE name NOT LIKE '% %';
 
 SELECT name
 FROM track
-WHERE name ~ '\mмой\M'
-   OR name ~ '\mMy\M';   
+WHERE name ~* '\mмой\M'
+OR name ~* '\mMy\M'; 
+
+
  
 
 	

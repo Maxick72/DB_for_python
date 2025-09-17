@@ -17,7 +17,7 @@ INSERT INTO artist(name) VALUES
 	('Zach Bryan');
 	
 INSERT INTO track(name,duration,albumID) VALUES
-	('Slave My',147,1),
+	('Slave Me',147,1),
 	('No Limit',193,1),
 	('Он Тебя Целует',240,2),
 	('Стоят подружки',246,2),
@@ -58,6 +58,4 @@ INSERT INTO track_collection(collection_id,track_id) VALUES
 	(4,2),
 	(4,3),
 	(4,4);
-	
-
 	
